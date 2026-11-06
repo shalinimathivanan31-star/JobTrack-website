@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobTrack - Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="login-box">
+
+            <h1>JobTrack</h1>
+            <p>Create Your Account</p>
+
+            <form onsubmit="signupUser(event)">
+
+                <input
+                    type="text"
+                    id="signupName"
+                    placeholder="Enter Your Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="signupEmail"
+                    placeholder="Enter Email"
+                    required
+                >
+
+                <input
+                    type="password"
+                    id="signupPassword"
+                    placeholder="Create Password"
+                    required
+                >
+
+                <button type="submit">Sign Up</button>
+
+            </form>
+
+            <p id="signupMessage"></p>
+
+            <p>
+                Already have an account?
+                <a href="login.html">Login</a>
+            </p>
+
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>

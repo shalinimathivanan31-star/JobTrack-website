@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobTrack Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard">
+
+        <aside class="sidebar">
+            <h2>JobTrack.</h2>
+
+            <nav>
+                <a href="#" class="active">Dashboard</a>
+                <a href="#">My Applications</a>
+                <a href="#">Saved Jobs</a>
+                <a href="#">Profile</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+
+            <header>
+                <div>
+                    <h1>Dashboard</h1>
+                    <a href="profile.html">My profile</a>
+                    <p id="userName"></p>
+                    <p id="userEmail"></p>
+                    <p>Welcome back! Track your career journey.</p>
+                </div>
+                <button class="add-btn" onclick="openForm()">
+    + Add New Job
+</button>
+<button onclick="logoutUser()">Logout</button>
+            </header>
+
+            <section class="stats">
+
+                <div class="stat-card">
+                    <h3>Total Applications</h3>
+                    <h2 id="totalCount">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Applied</h3>
+                    <h2 id="appliedCount">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Interviews</h3>
+                    <h2 id="interviewCount">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Selected</h3>
+                    <h2 id="selectedCount">0</h2>
+                </div>
+
+            </section>
+
+            <section class="applications">
+                <h2>Recent Applications</h2>
+                <input
+                   type="text"
+                   id="searchInput"
+                   placeholder="Search company or position..."
+                   onkeyup="searchJobs()"
+                >
+                <select id="statusFilter" onchange="filterJobs()">
+    <option value="All">All Status</option>
+    <option value="Applied">Applied</option>
+    <option value="Interview">Interview</option>
+    <option value="Selected">Selected</option>
+</select>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Company</th>
+                            <th>Position</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                    
+                    </tbody>
+                </table>
+            </section>
+
+        </main>
+    </div>
+
+<!-- Add Job Form -->
+<div class="job-modal" id="jobModal">
+
+    <div class="modal-content">
+        <h2>Add New Job</h2>
+
+        <input type="text" id="company"
+            placeholder="Company Name">
+
+        <input type="text" id="position"
+            placeholder="Job Position">
+
+        <select id="status">
+            <option value="Applied">Applied</option>
+            <option value="Interview">Interview</option>
+            <option value="Selected">Selected</option>
+            <option value="Rejected">Rejected</option>
+        </select>
+
+        <button onclick="addJob()">Save Job</button>
+        <button onclick="closeForm()">Cancel</button>
+    </div>
+
+</div>
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobTrack - Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="login-box">
+
+            <h1>My Profile</h1>
+
+            <h3 id="profileName"></h3>
+            <p id="profileEmail"></p>
+
+            <button onclick="logoutUser()">Logout</button>
+
+            <p>
+                <a href="index.html">Back to Dashboard</a>
+            </p>
+
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+
+    <script>
+        const user = JSON.parse(localStorage.getItem("loggedInUser"));
+
+        if (user) {
+            document.getElementById("profileName").textContent = user.name;
+            document.getElementById("profileEmail").textContent = user.email;
+        } else {
+            window.location.href = "login.html";
+        }
+    </script>
+
+</body>
+</html>
